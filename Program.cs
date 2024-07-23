@@ -5,11 +5,12 @@
         class Trainer
         {
             string name;
-            public Monster[] monster = new Monster[6];
+            public Monster[] monsters = new Monster[6];
 
             public Trainer(string _name)
             {
                 this.name = _name;
+                Monster[] monsters = new Monster[6];
             }
             
             public string GetName()
@@ -21,8 +22,9 @@
         }
          class Monster
         {
-            public Monster(int _hp)
+            public Monster(string _name, int _hp)
             {
+                this.name = _name;
                 this.hp = _hp;
             }
             string name;
@@ -35,9 +37,9 @@
         static void Main(string[] args)
         {
             Trainer trainer1 = new Trainer("레드");
-            trainer1.monster[0] = new Monster(100);
+            trainer1.monsters[0] = new Monster("피카츄",100);
 
-            Console.WriteLine($"첫번째 트레이너의 이름은 {trainer1.GetName()}이고 첫번째 몬스터의 체력은 {trainer1.monster[0].hp} 입니다.");
+            Console.WriteLine($"첫번째 트레이너의 이름은 {trainer1.GetName()}이고 첫번째 몬스터의 체력은 {trainer1.monsters[0].hp} 입니다.");
         }
     }
 }
